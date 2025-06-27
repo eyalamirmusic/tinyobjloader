@@ -19,10 +19,10 @@ set(ADDITIONAL_LIBRARIES winmm)
 endif()
 
 set(GLEW_LIBRARY "")
-if(UNIX)
+if(UNIX AND NOT APPLE)
 set(GLEW_LIBRARY GLEW)
 else()
-find_package( glew REQUIRED )
+find_package( GLEW REQUIRED )
 set(GLEW_LIBRARY GLEW::glew)
 endif()
 
